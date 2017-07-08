@@ -1,13 +1,17 @@
 // @flow
 
 import {
+	findMeFoodPage,
   homePage,
   helloEndpoint,
+  postFoodPage,
 } from './controller'
 
 import {
+	FIND_ME_FOOD_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
   helloEndpointRoute,
+  POST_FOOD_PAGE_ROUTE,
 } from '../shared/routes'
 
 import renderApp from './render-app'
@@ -19,6 +23,14 @@ export default (app: Object) => {
 
 	app.get(helloEndpointRoute(), (req, res) => {
 		res.json(helloEndpoint(req.params.num))
+	})
+
+	app.get(FIND_ME_FOOD_PAGE_ROUTE, (req, res) => {
+		res.send(renderApp(req.url, findMeFoodPage()))
+	})
+
+	app.get(POST_FOOD_PAGE_ROUTE, (req, res) => {
+		res.send(renderApp(req.url, postFoodPage()))
 	})
 
 	app.get('*', (req, res) => {
