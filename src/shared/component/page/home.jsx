@@ -2,8 +2,13 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
 import { APP_NAME } from '../../config'
+
+const Title = styled.h1`
+	color: tomato;
+`
 
 const HomePage = () => (
 	<div>
@@ -13,7 +18,9 @@ const HomePage = () => (
         { property: 'og:title', content: APP_NAME },
 			]}
 		/>
-		<h1 className="muted pl4 mt4 green">{APP_NAME}</h1>
+		<Title>
+			{APP_NAME}
+		</Title>
 	</div>
 )
 
