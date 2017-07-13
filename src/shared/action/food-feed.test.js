@@ -9,28 +9,13 @@ import {
 	fetchFoodFeedSuccess,
 	fetchFoodFeedFailure,
 } from './food-feed'
+import { exampleFoodPosts } from '../mocks/food-posts'
 
 const mockStore = configureMockStore([thunkMiddleware])
 
 afterEach(() => {
 	fetchMock.restore()
 })
-
-const exampleFoodPosts = {
-	data: [{
-		_id: '5963ef43427a5c78cf35c88c',
-		description: 'I have extra pasta!',
-		location: 'adelaide',
-		picture: 'http://lorempixel.com/300/300/food',
-		type: 'meal',
-	}, {
-		_id: '5963ef43427a5c78cf35c88c',
-		description: 'I have extra pasta!',
-		location: 'adelaide',
-		picture: 'http://lorempixel.com/300/300/food',
-		type: 'meal',
-	}],
-}
 
 const exampleFoodPostResponse = {
 	headers: {
