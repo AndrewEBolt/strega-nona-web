@@ -1,5 +1,5 @@
+import { API_BASE_URL } from '../config'
 
-const API_BASE_URL = process.env.API_BASE_URL
 const headers = {
   // 'Content-type': 'application/json',
 	Accept: 'application/json',
@@ -46,6 +46,10 @@ const baseRequest = (path, options) => {
 	return fetch(url, reqOptions)
 		.then(checkStatus)
 		.then(parseJSON)
+		.catch((e) => {
+			// eslint-disable-next-line no-console
+			console.log(e)
+		})
 		// .then(camelizeKeys)
 }
 
