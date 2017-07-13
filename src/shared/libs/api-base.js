@@ -8,8 +8,6 @@ const headers = {
 
 const responseError = (res) => {
 	const error = new Error(res.statusText)
-	// eslint-disable-next-line no-console
-	console.log(res)
 	error.response = res
 	throw error
 }
@@ -29,7 +27,7 @@ const parseJSON = (response) => {
 	if (contentType && contentType.indexOf('application/json') !== -1) {
 		return response.json()
 	}
-	return true
+	throw new Error('API response is not valid json')
 }
 
 // const camelizeKeys = (res) => {
@@ -46,10 +44,6 @@ const baseRequest = (path, options) => {
 	return fetch(url, reqOptions)
 		.then(checkStatus)
 		.then(parseJSON)
-		.catch((e) => {
-			// eslint-disable-next-line no-console
-			console.log(e)
-		})
 		// .then(camelizeKeys)
 }
 
