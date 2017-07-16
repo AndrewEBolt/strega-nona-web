@@ -1,8 +1,15 @@
 // @flow
 
-export const findMeFoodPage = () => ({
-	posts: {},
-})
+export const findMeFoodPage = () => null
+
+// export const findMeFoodPage = () => ({
+// 	foodFeed: {
+// 		loading: false,
+// 		posts: {
+// 			message: 'from server',
+// 		},
+// 	},
+// })
 
 export const homePage = () => null
 

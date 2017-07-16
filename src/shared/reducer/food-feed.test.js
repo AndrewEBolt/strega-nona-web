@@ -16,7 +16,7 @@ beforeEach(() => {
 
 test('handle default', () => {
 	expect(foodFeedState.get('loading')).toBe(false)
-	expect(foodFeedState.get('posts')).toBe(Immutable.fromJS({}))
+	expect(foodFeedState.get('posts')).toBe(Immutable.fromJS([]))
 })
 
 test('handle FETCH_FOOD_FEED_REQUEST', () => {

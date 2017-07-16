@@ -12,6 +12,10 @@ import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config'
 import { isProd } from '../shared/util'
 
 const renderApp = (location: string, plainPartialState: ?Object, routerContext: ?Object = {}) => {
+	// eslint-disable-next-line no-console
+	console.log('server/render-app.jsx')
+	// eslint-disable-next-line no-console
+	console.log(plainPartialState)
 	const store = initStore(plainPartialState)
 	const appHtml = ReactDOMServer.renderToString(
 		<Provider store={store}>

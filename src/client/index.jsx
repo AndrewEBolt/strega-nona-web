@@ -24,9 +24,14 @@ const preloadedState = window.__PRELOADED_STATE__
 /* eslint-enable no-underscore-dangle */
 
 const store = createStore(combineReducers(
-  { hello: helloReducer },
-  { foodFeed: foodFeedReducer }),
-  { hello: Immutable.fromJS(preloadedState.hello) },
+	{
+		hello: helloReducer,
+		foodFeed: foodFeedReducer,
+	}),
+	{
+		hello: Immutable.fromJS(preloadedState.hello),
+		foodFeed: Immutable.fromJS(preloadedState.foodFeed),
+	},
   composeEnhancers(applyMiddleware(thunkMiddleware)))
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)

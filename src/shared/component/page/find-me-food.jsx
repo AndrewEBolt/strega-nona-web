@@ -3,7 +3,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { APP_NAME } from '../../config'
-import FoodFeed from '../../container/food-feed'
+import FoodFeed from '../../container/food-feed-container'
 
 const FindMeFoodPage = () => (
 	<div>
@@ -13,7 +13,7 @@ const FindMeFoodPage = () => (
         { property: 'og:title', content: APP_NAME },
 			]}
 		/>
-		<div>
+		<div className="content-inner">
 			<FoodFeed />
 		</div>
 	</div>

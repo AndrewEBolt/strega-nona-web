@@ -11,7 +11,7 @@ import {
 
 const initialState = Immutable.fromJS({
 	loading: false,
-	posts: {},
+	posts: [],
 })
 
 const foodFeedReducer = (state: Immut = initialState, action: {type: string, payload: any}) => {
@@ -25,7 +25,7 @@ const foodFeedReducer = (state: Immut = initialState, action: {type: string, pay
 	case FETCH_FOOD_FEED_FAILURE:
 		return state
 			.set('loading', false)
-			.set('posts', {})
+			.set('posts', [])
 	default:
 		return state
 	}
