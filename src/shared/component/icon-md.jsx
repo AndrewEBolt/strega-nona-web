@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 // Get icons from here:
 // http://gorangajic.github.io/react-icons/md.html
@@ -16,10 +16,6 @@ type IconProps = {
 }
 
 class IconMd extends React.Component {
-	// static childContextTypes() {
-	// 	reactIconBase: PropTypes.object,
-	// }
-
 	getChildContext() {
 		return {
 			reactIconBase: {
