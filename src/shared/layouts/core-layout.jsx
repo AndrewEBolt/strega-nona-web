@@ -8,9 +8,9 @@ type Props = {
 }
 
 const CoreLayout = ({ children }: Props) => (
-	<div className="page-container bg-grey flex flex-column">
+	<div className="page-container flex flex-column">
 		<Header />
-		<div className="relative content-outer bg-grey">
+		<div className="relative content-outer bg-gray">
 			{children}
 		</div>
 	</div>

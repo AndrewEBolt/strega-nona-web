@@ -9,7 +9,7 @@ import IconMd from './icon-md'
 const Picture = styled.picture`
 	background-color: gray;
 	display: block;
-	height: 280px;
+	height: 350px;
 	width: 100%;
 `
 
@@ -26,22 +26,18 @@ type Props = {
 }
 
 const FoodPost = ({ description, location, picture }: Props) => (
-	<div className="relative col col-12 lg-col-4 md-col-4 sm-col-12 my1 mb2 px2 overflow-hidden">
+	<div className="relative col col-12 lg-col-4 md-col-4 sm-col-12 my1 mb3 px2 overflow-hidden">
 		<Picture>
 			<Image picture={picture} />
 		</Picture>
-		<div className="absolute flex flex-column py1 px2 left-0 right-0 bottom-0 bg-white">
-			<div className="pb1">
-				Username
-			</div>
-			<div className="pb1">
-				{description}
-			</div>
-			<div className="flex items-center">
+		<ul className="list-reset absolute flex flex-column m0 py1 px1 mx2 left-0 right-0 bottom-0 bg-white">
+			<li className="flex items-center pb1">
 				<IconMd><MdLocationOn className="muted" /></IconMd>
 				<span className="muted">{location}</span>
-			</div>
-		</div>
+			</li>
+			<li className="pb1 bold truncate"><span>Username</span></li>
+			<li className="truncate"><span>{description}</span></li>
+		</ul>
 	</div>
 )
 
