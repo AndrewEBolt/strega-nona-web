@@ -21,7 +21,7 @@ const foodFeedReducer = (state: Immut = initialState, action: {type: string, pay
 	case FETCH_FOOD_FEED_SUCCESS:
 		return state
 			.set('loading', false)
-			.set('posts', action.payload)
+			.set('posts', Immutable.fromJS(action.payload))
 	case FETCH_FOOD_FEED_FAILURE:
 		return state
 			.set('loading', false)

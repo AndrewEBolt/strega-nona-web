@@ -5,7 +5,7 @@ import React from 'react'
 import FoodPost from './food-post'
 import Spinner from './spinner'
 
-type FoodFeedProps = {
+type Props = {
 	fetchFoodFeed: Function,
 	loading: boolean,
 	posts: Array<{
@@ -16,12 +16,10 @@ type FoodFeedProps = {
 	}>,
 }
 
-export default class FoodFeed extends React.Component {
+class FoodFeed extends React.Component<void, Props, void> {
 	componentDidMount() {
 		this.props.fetchFoodFeed()
 	}
-
-	props: FoodFeedProps
 
 	render() {
 		// eslint-disable-next-line no-underscore-dangle
@@ -29,11 +27,11 @@ export default class FoodFeed extends React.Component {
 
 		return (
 			<div className="clearfix col col-12 mt3">
-				{this.props.loading &&
-					<div className="py3"><Spinner /></div>
-				}
-				{this.props.posts && this.props.posts.map(displayPost)}
+				{ this.props.loading && <div className="py3"><Spinner /></div> }
+				{ this.props.posts && this.props.posts.map(displayPost) }
 			</div>
 		)
 	}
 }
+
+export default FoodFeed
